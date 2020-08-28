@@ -10,6 +10,15 @@ class PokeAPI extends RESTDataSource {
     const response = await this.get(`pokemon/${pokeID}`);
     return this.pokeReducer(response);
   }
+
+  async getOriginals() {
+    let arr = [];
+    for (let i = 1; i < 152; i++) {
+      let response = await this.get(`pokemon/${i}`);
+      arr.push(response);
+    }
+    return arr.map(poke => this.pokeReducer(poke))
+  }
   
   // getLaunchesByIds({ launchIds }) {
   //   return Promise.all(
