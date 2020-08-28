@@ -8,7 +8,7 @@ class PokeAPI extends RESTDataSource {
 
   async getPokemonById({ pokeID }) {
     const response = await this.get(`pokemon/${pokeID}`);
-    return this.pokeReducer(response[0]); // 'launches' is appended to baseURL
+    return this.pokeReducer(response);
   }
   
   // getLaunchesByIds({ launchIds }) {
