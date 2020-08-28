@@ -4,6 +4,7 @@ const typeDefs = gql`
 type Query {
   pokemon(id: ID!): Pokemon!
   originalPokes: [Pokemon]!
+  startersByType(type1: String!): [Pokemon]!
   # pokemonByID(id: ID!): Pokemon
   me: User
 #   launches: [Launch]!
