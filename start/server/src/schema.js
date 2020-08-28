@@ -6,7 +6,7 @@ type Query {
   originalPokes: [Pokemon]!
   startersByType(type: String!): [Pokemon]!
   originalsByType(type: String!): [Pokemon]!
-  # pokesByType(type: String!): [Pokemon]!
+  pokesByType(type: String!): [Pokemon]!
   me: User
 }
 type Pokemon {

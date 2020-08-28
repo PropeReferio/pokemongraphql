@@ -42,6 +42,17 @@ class PokeAPI extends RESTDataSource {
     }
     return arr.map(poke => this.pokeReducer(poke))
   }
+  async getPokesByType({ pokeType }) {
+    let arr = [];
+    for (let i = 1; i < 894; i++) {
+      let response = await this.get(`pokemon/${i}`);
+      for (let j = 0; j < response.types.length; j++) {
+        if (response.types[j].type.name === pokeType)
+        arr.push(response);
+      }
+    }
+    return arr.map(poke => this.pokeReducer(poke))
+  }
   // async getPokesByType({ pokeType }) {
   //   let arr = [];
   //   let response = await this.get(`type/${pokeType}`);

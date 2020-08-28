@@ -17,7 +17,11 @@ const server = new ApolloServer({
     pokeAPI: new PokeAPI(),
     // launchAPI: new LaunchAPI(),
     // userAPI: new UserAPI({ store })
-  })
+  }),
+  engine: {    
+    reportSchema: true,
+    variant: "current"
+  }
 });
 
 server.listen().then(({ url }) => {
