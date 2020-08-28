@@ -30,6 +30,7 @@ class PokeAPI extends RESTDataSource {
     }
     return arr.map(poke => this.pokeReducer(poke))
   }
+
   async getOriginalsByType({ pokeType }) {
     let arr = [];
     for (let i = 1; i < 152; i++) {
@@ -41,6 +42,12 @@ class PokeAPI extends RESTDataSource {
     }
     return arr.map(poke => this.pokeReducer(poke))
   }
+  // async getPokesByType({ pokeType }) {
+  //   let arr = [];
+  //   let response = await this.get(`type/${pokeType}`);
+
+  //   return response.pokemon.map(poke => this.pokeReducer(poke))
+  // }
   
   // getLaunchesByIds({ launchIds }) {
   //   return Promise.all(
@@ -62,9 +69,18 @@ class PokeAPI extends RESTDataSource {
       name: poke.name,
       region: poke.location_area_encounters,
       type1: poke.types[0].type.name,
-      type2: poke.types[1].type.name,
+      type2: poke.types[1] && poke.types[1].type.name,
     };
   }
+  // pokeReducer(poke) {
+  //   return {
+  //     id: poke.id,
+  //     name: poke.name,
+  //     region: poke.location_area_encounters,
+  //     type1: poke.types[0].type.name,
+  //     type2: poke.types[1].type.name,
+  //   };
+  // }
 }
 
 module.exports = PokeAPI;

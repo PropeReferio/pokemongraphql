@@ -7,7 +7,9 @@ module.exports = {
     startersByType: (_, { type }, { dataSources }) =>
       dataSources.pokeAPI.getStartersByType({ pokeType: type }),
     originalsByType: (_, { type }, { dataSources }) =>
-      dataSources.pokeAPI.getOriginalsByType({ pokeType: type })
+      dataSources.pokeAPI.getOriginalsByType({ pokeType: type }),
+    // pokesByType: (_, { type }, { dataSources }) =>
+    //   dataSources.pokeAPI.getPokesByType({ pokeType: type })
     // me: (_, __, { dataSources }) => dataSources.userAPI.findOrCreateUser()
   }
 };
