@@ -28,7 +28,7 @@ type Pokemon {
   name: String!
   region: String
   type1: String!
-  # type2: String
+  type2: String
 }
 type User {
   id: ID!

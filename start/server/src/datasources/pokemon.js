@@ -49,6 +49,7 @@ class PokeAPI extends RESTDataSource {
       name: poke.name,
       region: poke.location_area_encounters,
       type1: poke.types[0].type.name,
+      type2: poke.types[1].type.name,
     };
   }
 }
