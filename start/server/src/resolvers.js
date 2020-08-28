@@ -4,8 +4,10 @@ module.exports = {
       dataSources.pokeAPI.getPokemonById({ pokeID: id }),
     originalPokes: (_, __, { dataSources}) =>
       dataSources.pokeAPI.getOriginals(),
-    startersByType: (_, { type1 }, { dataSources }) =>
-      dataSources.pokeAPI.getStartersByType({ pokeType: type1 })
+    startersByType: (_, { type }, { dataSources }) =>
+      dataSources.pokeAPI.getStartersByType({ pokeType: type }),
+    originalsByType: (_, { type }, { dataSources }) =>
+      dataSources.pokeAPI.getOriginalsByType({ pokeType: type })
     // me: (_, __, { dataSources }) => dataSources.userAPI.findOrCreateUser()
   }
 };
